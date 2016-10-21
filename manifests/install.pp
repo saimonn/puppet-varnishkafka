@@ -1,0 +1,3 @@
+class varnishkafka::install (
+) {
+}

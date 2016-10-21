@@ -1,0 +1,15 @@
+# File generated using Puppet do not edit
+daemonize                          = <%= scope.lookupvar('varnishkafka::daemonize') %>
+format.type                        = <%= scope.lookupvar('varnishkafka::output_format_type') %>
+format                             = <%= scope.lookupvar('varnishkafka::output_format') %>
+kafka.message.send.max.retries     = <%= scope.lookupvar('varnishkafka::kafka_retries') %>
+kafka.metadata.broker.list         = <%= scope.lookupvar('varnishkafka::kafka_broker_list').join(',') %>
+kafka.partition                    = <%= scope.lookupvar('varnishkafka::kafka_partition') %>
+kafka.queue.buffering.max.messages = <%= scope.lookupvar('varnishkafka::kafka_buffer_len') %>
+kafka.topic.request.required.acks  = <%= scope.lookupvar('varnishkafka::kafka_require_acks') ? '1' : '0' %>
+kafka.topic.message.timeout.ms     = <%= scope.lookupvar('varnishkafka::kafka_timeout') %>
+kafka.topic                        = <%= scope.lookupvar('varnishkafka::kafka_topic') %>
+log.kafka.msg.error                = <%= scope.lookupvar('varnishkafka::log_errors') %>
+log.stderr                         = <%= scope.lookupvar('varnishkafka::log_stderr') %>
+log.syslog                         = <%= scope.lookupvar('varnishkafka::log_syslog') %>
+output                             = <%= scope.lookupvar('varnishkafka::output_type') %>
