@@ -1,0 +1,57 @@
+{
+  "name": "camptocamp-varnishkafka",
+  "version": "0.0.0",
+  "author": "Camptocamp",
+  "summary": "Puppet Module to install and configure varnishkafka",
+  "license": "Camptocamp SA",
+  "source": "https://github.com/camptocamp/puppet-varnishkafka",
+  "issues_url": "https://github.com/camptocamp/puppet-varnishkafka/issues",
+  "project_page": "https://github.com/camptocamp/puppet-varnishkafka",
+  "dependencies": [
+
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">=3.2.0 <5.0.0"
+    },
+
+    {
+      "name": "puppetlabs/apt",
+      "version_requirement": ">= 2.0.0 <3.0.0"
+    }
+
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "7",
+        "8"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "14.04",
+        "15.04",
+        "15.10",
+        "16.04"
+      ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ]
+}

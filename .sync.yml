@@ -1,0 +1,7 @@
+---
+.travis.yml:
+  acceptance:
+    - '*'
+Rakefile:
+  metadata-json-lint_options:
+    strict_license: false
