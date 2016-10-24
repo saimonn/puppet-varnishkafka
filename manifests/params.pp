@@ -13,11 +13,21 @@ class varnishkafka::params {
   case $::operatingsystem {
     'Debian': {
       case $::operatingsystemmajrelease {
-        '7': {
-          $daemonize = true
-        }
         '8': {
           $daemonize = false
+        }
+        default: {
+          fail("unsupported OS version ${::operatingsystem}-${::operatingsystemmajrelease}")
+        }
+      }
+    }
+    'RedHat': {
+      case $::operatingsystemmajrelease {
+        '7': {
+          $daemonize = false
+        }
+        default: {
+          fail("unsupported OS version ${::operatingsystem}-${::operatingsystemmajrelease}")
         }
       }
     }
@@ -26,7 +36,13 @@ class varnishkafka::params {
         '16.04': {
           $daemonize = false
         }
+        default: {
+          fail("unsupported OS version ${::operatingsystem}-${::operatingsystemmajrelease}")
+        }
       }
+    }
+    default: {
+      fail("unsupported OS ${::operatingsystem}")
     }
   }
 }
