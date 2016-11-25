@@ -1,7 +1,14 @@
 # File generated using Puppet do not edit
 daemonize                          = <%= scope.lookupvar('varnishkafka::daemonize') %>
 format.type                        = <%= scope.lookupvar('varnishkafka::output_format_type') %>
-format                             = <%= scope.lookupvar('varnishkafka::output_format') %>
+format                             = <%
+scope.lookupvar('varnishkafka::output_format').each do | field, value |
+  raise Puppet::ParseError, "Must define 'tag' for output_format field #{field}" unless value.fetch('tag', nil) != nil and value['tag'] != :undef
+-%>
+  %{<%= value.fetch('arg', nil) != nil ? "" : value['arg'] %>@<%= field %>}<%= value['tag'] %> 
+<%
+end
+%>
 kafka.message.send.max.retries     = <%= scope.lookupvar('varnishkafka::kafka_retries') %>
 kafka.metadata.broker.list         = <%= scope.lookupvar('varnishkafka::kafka_broker_list').join(',') %>
 kafka.partition                    = <%= scope.lookupvar('varnishkafka::kafka_partition') %>

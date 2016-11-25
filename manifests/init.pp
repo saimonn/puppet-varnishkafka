@@ -31,6 +31,8 @@ class varnishkafka (
   validate_string($service_name)
   validate_string($kafka_topic)
 
+  validate_hash($output_format)
+
   include ::varnishkafka::install
   include ::varnishkafka::config
   include ::varnishkafka::service
