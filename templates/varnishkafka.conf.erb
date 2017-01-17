@@ -19,4 +19,7 @@ kafka.topic                        = <%= scope.lookupvar('varnishkafka::kafka_to
 log.kafka.msg.error                = <%= scope.lookupvar('varnishkafka::log_errors') %>
 log.stderr                         = <%= scope.lookupvar('varnishkafka::log_stderr') %>
 log.syslog                         = <%= scope.lookupvar('varnishkafka::log_syslog') %>
+log.statistics.append              = <%= scope.lookupvar('varnishkafka::log_stats_append') %>
+log.statistics.file                = <%= scope.lookupvar('varnishkafka::log_stats_file') %>
+log.statistics.interval            = <%= scope.lookupvar('varnishkafka::log_stats_interval') %>
 output                             = <%= scope.lookupvar('varnishkafka::output_type') %>
